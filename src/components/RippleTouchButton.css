@@ -1,0 +1,54 @@
+.ripple-touch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  color: inherit;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.ripple-touch:focus-visible {
+  outline: 2px solid rgba(184, 151, 46, 0.85);
+  outline-offset: 3px;
+}
+
+.ripple-touch::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(0.2);
+  background: radial-gradient(
+    circle at var(--ripple-x, 50%) var(--ripple-y, 50%),
+    rgba(184, 151, 46, 0.52) 0%,
+    rgba(184, 151, 46, 0.16) 38%,
+    transparent 62%
+  );
+  transition:
+    opacity 0.38s ease,
+    transform 0.42s ease;
+  pointer-events: none;
+}
+
+.ripple-touch[data-pressed='true']::after {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.ripple-touch[data-pressed='true'] {
+  filter: drop-shadow(0 0 10px rgba(184, 151, 46, 0.45));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ripple-touch::after {
+    transition-duration: 0.05s;
+  }
+}

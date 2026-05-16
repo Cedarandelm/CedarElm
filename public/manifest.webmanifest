@@ -1,0 +1,9 @@
+{
+  "name": "Cedar & Elm",
+  "short_name": "Cedar & Elm",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1B3A2D",
+  "theme_color": "#1B3A2D",
+  "lang": "en"
+}
