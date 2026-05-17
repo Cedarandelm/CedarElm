@@ -1,6 +1,9 @@
 import { useEffect } from 'react'
 import './App.css'
 import { BottomNav } from './components/BottomNav.jsx'
+import { RippleTouchButton } from './components/RippleTouchButton.jsx'
+
+const noop = () => {}
 
 export default function App() {
   useEffect(() => {
@@ -11,7 +14,15 @@ export default function App() {
   return (
     <div className="app">
       <header className="app__topbar">
-        <h1 className="app__topbar__title font-display">Cedar &amp; Elm</h1>
+        <h1 className="app__topbar__heading">
+          <RippleTouchButton
+            className="app__topbar__title font-display"
+            aria-label="Cedar & Elm"
+            onClick={noop}
+          >
+            Cedar &amp; Elm
+          </RippleTouchButton>
+        </h1>
       </header>
 
       <div className="app__gate" aria-live="polite">

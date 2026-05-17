@@ -22,12 +22,19 @@
   background-color: var(--midnight-forest);
 }
 
+.app__topbar__heading {
+  margin: 0;
+  font-weight: inherit;
+}
+
 .app__topbar__title {
   margin: 0;
   font-size: clamp(1.3rem, 4.2vw, 1.6rem);
   letter-spacing: 0.1em;
   line-height: 1.15;
   color: var(--cream);
+  border-radius: 12px;
+  padding: 0.35rem 0.9rem;
 }
 
 .app__stage {
