@@ -1,5 +1,6 @@
 :root {
   --midnight-forest: #1b3a2d;
+  --content-warm: #f8f7f4;
   --cream: #f5f0e8;
   --brass: #b8972e;
 
@@ -16,6 +17,12 @@
 
   --font-display: 'Baskervville', Georgia, serif;
   --font-body: 'Cormorant Garamond', Garamond, serif;
+
+  --topbar-height: clamp(60px, 17vw, 70px);
+  --nav-arch-height: 48px;
+  --nav-arch-lift: 36px;
+  --nav-seal-size: 64px;
+  --nav-icon-size: 28px;
 
   color-scheme: dark;
 }
@@ -37,6 +44,7 @@ body {
   flex-direction: column;
   min-height: 100%;
   min-height: 100dvh;
+  overflow-x: hidden;
   padding: var(--safe-top) var(--safe-right) var(--safe-bottom) var(--safe-left);
   background-color: var(--midnight-forest);
   color: var(--cream);

@@ -3,8 +3,31 @@
   display: flex;
   flex-direction: column;
   min-height: 0;
+  max-height: 100dvh;
   position: relative;
   background-color: var(--midnight-forest);
+  overflow: hidden;
+}
+
+.app__topbar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+  max-height: 70px;
+  height: var(--topbar-height);
+  padding: 0 1rem;
+  text-align: center;
+  background-color: var(--midnight-forest);
+}
+
+.app__topbar__title {
+  margin: 0;
+  font-size: clamp(1.3rem, 4.2vw, 1.6rem);
+  letter-spacing: 0.1em;
+  line-height: 1.15;
+  color: var(--cream);
 }
 
 .app__stage {
@@ -12,18 +35,44 @@
   display: flex;
   flex-direction: column;
   min-height: 0;
+  overflow-x: hidden;
+  overflow-y: visible;
 }
 
 .app__main {
-  flex: 1;
-  min-height: 0;
   position: relative;
+  z-index: 1;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--content-warm);
+  overflow: hidden;
 }
 
-.app__backdrop {
-  position: absolute;
-  inset: 0;
-  background-color: var(--midnight-forest);
+.app__content-stage {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  overflow: hidden;
+}
+
+.app__media-frame {
+  width: min(100%, 390px);
+  aspect-ratio: 3 / 4;
+  height: auto;
+  max-height: min(
+    32.5rem,
+    calc(100dvh - var(--topbar-height) - 11.5rem - var(--safe-top) - var(--safe-bottom))
+  );
+  flex: 0 1 auto;
+  background-color: var(--content-warm);
 }
 
 .app__gate {
@@ -31,15 +80,19 @@
 }
 
 @media screen and (orientation: landscape) {
+  .app__topbar {
+    display: none;
+  }
+
   .app__gate {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-block: calc(var(--safe-area-top)) 1rem;
+    padding-block: 1rem;
     padding-inline: 1rem;
     flex-shrink: 0;
     text-align: center;
-    border-bottom: 1px solid rgba(184, 151, 46, 0.35);
+    background-color: var(--midnight-forest);
   }
 
   .app__gate-title {
@@ -50,8 +103,6 @@
   }
 
   .app__stage {
-    flex: 1;
-    min-height: 0;
     opacity: 0.35;
     pointer-events: none;
     filter: saturate(0.88);
