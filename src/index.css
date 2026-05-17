@@ -18,7 +18,7 @@
   --font-display: 'Baskervville', Georgia, serif;
   --font-body: 'Cormorant Garamond', Garamond, serif;
 
-  --topbar-height: clamp(60px, 17vw, 70px);
+  --topbar-height: clamp(72px, 20vw, 84px);
   --nav-seal-size: calc(64px * 1.2);
   --nav-seal-radius: calc(var(--nav-seal-size) / 2);
   --nav-seal-disc-padding: 9px;

@@ -14,8 +14,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 60px;
-  max-height: 70px;
+  min-height: 72px;
+  max-height: 84px;
   height: var(--topbar-height);
   padding: 0 1rem;
   text-align: center;
@@ -29,7 +29,7 @@
 
 .app__topbar__title {
   margin: 0;
-  font-size: clamp(1.3rem, 4.2vw, 1.6rem);
+  font-size: clamp(1.872rem, 6.048vw, 2.304rem);
   letter-spacing: 0.1em;
   line-height: 1.15;
   color: var(--cream);
