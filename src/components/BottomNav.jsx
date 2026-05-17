@@ -6,6 +6,13 @@ import boutiqueLogoSrc from '../assets/myboutique-logo.png'
 import scannerLogoSrc from '../assets/scanner-logo.png'
 import { RippleTouchButton } from './RippleTouchButton.jsx'
 
+/** Bump when replacing nav icon PNGs in src/assets (same filename). */
+const NAV_ICON_CACHE_REV = 2
+
+function navIconSrc(url) {
+  return `${url}?v=${NAV_ICON_CACHE_REV}`
+}
+
 function IconSendArrow() {
   return (
     <svg className="ask-cedar__send-icon" viewBox="0 0 20 20" aria-hidden="true">
@@ -33,10 +40,10 @@ export function BottomNav() {
               <span className="bottom-nav__icon-slot">
                 <img
                   className="bottom-nav__icon-img"
-                  src={boutiqueLogoSrc}
+                  src={navIconSrc(boutiqueLogoSrc)}
                   alt=""
-                  width={28}
-                  height={28}
+                  width={63}
+                  height={63}
                   decoding="async"
                 />
               </span>
@@ -47,10 +54,10 @@ export function BottomNav() {
               <span className="bottom-nav__icon-slot">
                 <img
                   className="bottom-nav__icon-img"
-                  src={scannerLogoSrc}
+                  src={navIconSrc(scannerLogoSrc)}
                   alt=""
-                  width={28}
-                  height={28}
+                  width={63}
+                  height={63}
                   decoding="async"
                 />
               </span>
@@ -58,34 +65,44 @@ export function BottomNav() {
             </RippleTouchButton>
 
             <div className="bottom-nav__centre-slot">
-              <RippleTouchButton
-                className="bottom-nav__seal-btn ripple-touch"
-                aria-label="Cedar"
-                onClick={noop}
-              >
-                <span className="bottom-nav__seal">
-                  <img
-                    className="bottom-nav__seal-img"
-                    src={cedarSealSrc}
-                    alt=""
-                    width={64}
-                    height={64}
-                    loading="eager"
-                    fetchPriority="high"
-                    decoding="sync"
-                  />
+              <div className="bottom-nav__btn bottom-nav__btn--centre">
+                <div className="bottom-nav__seal-slot">
+                  <RippleTouchButton
+                    className="bottom-nav__seal-btn ripple-touch"
+                    aria-label="Cedar"
+                    onClick={noop}
+                  >
+                    <span className="bottom-nav__seal-stack">
+                      <span className="bottom-nav__seal-disc" aria-hidden="true" />
+                      <span className="bottom-nav__seal">
+                        <img
+                          className="bottom-nav__seal-img"
+                          src={cedarSealSrc}
+                          alt=""
+                          width={77}
+                          height={77}
+                          loading="eager"
+                          fetchPriority="high"
+                          decoding="sync"
+                        />
+                      </span>
+                    </span>
+                  </RippleTouchButton>
+                </div>
+                <span className="bottom-nav__label bottom-nav__label--seal-rail" aria-hidden="true">
+                  Cedar
                 </span>
-              </RippleTouchButton>
+              </div>
             </div>
 
             <RippleTouchButton className="bottom-nav__btn" aria-label="Formulary" onClick={noop}>
               <span className="bottom-nav__icon-slot">
                 <img
                   className="bottom-nav__icon-img"
-                  src={formularyLogoSrc}
+                  src={navIconSrc(formularyLogoSrc)}
                   alt=""
-                  width={28}
-                  height={28}
+                  width={63}
+                  height={63}
                   decoding="async"
                 />
               </span>
@@ -96,10 +113,10 @@ export function BottomNav() {
               <span className="bottom-nav__icon-slot">
                 <img
                   className="bottom-nav__icon-img bottom-nav__icon-img--account"
-                  src={accountLogoSrc}
+                  src={navIconSrc(accountLogoSrc)}
                   alt=""
-                  width={28}
-                  height={28}
+                  width={63}
+                  height={63}
                   loading="eager"
                   fetchPriority="high"
                   decoding="sync"

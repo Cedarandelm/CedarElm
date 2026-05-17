@@ -19,37 +19,40 @@
   --font-body: 'Cormorant Garamond', Garamond, serif;
 
   --topbar-height: clamp(60px, 17vw, 70px);
-  --nav-arch-height: 56px;
-  --nav-arch-viewbox-width: 390;
-  /* Room above y=0 for collar peak (seal center y − collar radius). */
-  --nav-arch-viewbox-inset-top: 28px;
-  --nav-arch-viewbox-height: calc(var(--nav-arch-height) + var(--nav-arch-viewbox-inset-top));
-  --nav-arch-zone-height: var(--nav-arch-viewbox-height);
-  --nav-seal-size: 64px;
+  --nav-seal-size: calc(64px * 1.2);
   --nav-seal-radius: calc(var(--nav-seal-size) / 2);
-  /* Collar gap around cedar seal and flat bar above label baselines (Vivino-style). */
-  --nav-collar-gap: 9px;
-  --nav-flat-above-labels: 9px;
+  --nav-seal-disc-padding: 9px;
+  /* Nudge seal + disc together for label baseline alignment. */
+  --nav-seal-img-shift-y: 7px;
+  --nav-disc-radius: calc(var(--nav-seal-radius) + var(--nav-seal-disc-padding));
+  --nav-disc-size: calc(var(--nav-disc-radius) * 2);
+  /* How far the seal overlaps above the panel (visual only; not nav bar height). */
+  --nav-disc-lift: max(0px, calc(var(--nav-disc-size) - var(--nav-row-stack)));
+  --nav-bar-trim: 24px;
   --nav-row-padding-bottom: 0px;
-  --nav-row-stack: calc(
-    var(--nav-icon-size) + var(--nav-icon-label-gap) + var(--nav-label-line) +
-      var(--nav-btn-padding-bottom)
-  );
-  /* Pull nav row up so label baselines sit on the arch viewBox bottom (y = arch-height). */
-  --nav-body-pull: var(--nav-row-stack);
-  --nav-label-baseline-y: var(--nav-arch-height);
-  --nav-arch-flat-y: calc(var(--nav-label-baseline-y) - var(--nav-flat-above-labels));
-  --nav-seal-bottom-y: calc(
-    var(--nav-label-baseline-y) - var(--nav-btn-padding-bottom)
-  );
-  --nav-seal-center-y: calc(var(--nav-seal-bottom-y) - var(--nav-seal-radius));
-  /* Pull footer up: half seal straddle + arch overdraw above viewBox origin */
-  --nav-arch-lift: calc(var(--nav-seal-size) / 2 + var(--nav-arch-viewbox-inset-top));
-  --nav-icon-size: 28px;
-  --nav-icon-label-gap: 5px;
+  --nav-icon-size: calc(28px * 2.25);
+  --nav-icon-slot-trim: 10px;
+  --nav-icon-slot-height: calc(var(--nav-icon-size) - var(--nav-icon-slot-trim));
+  --nav-icon-label-gap: 0px;
+  --nav-icon-label-overlap: 5px;
+  --nav-icon-optical-shift-x: -3px;
+  --nav-icon-nudge-y: 3px;
+  --nav-icon-drop: 0px;
+  --nav-label-pull-up: 3px;
   --nav-btn-padding-bottom: 2px;
   --nav-label-size: clamp(0.48rem, 2.35vw, 0.56rem);
   --nav-label-line: calc(var(--nav-label-size) * 1.15);
+  --nav-row-stack: calc(
+    var(--nav-icon-drop) + var(--nav-icon-slot-height) + var(--nav-icon-label-gap) -
+      var(--nav-icon-label-overlap) - var(--nav-label-pull-up) + var(--nav-label-line)
+  );
+  --nav-icons-chat-gap: 8px;
+  --nav-ask-cedar-block: calc(2.5rem + 0.5rem + 0.45rem);
+  --nav-icon-band-min: var(--nav-row-stack);
+  --nav-panel-min-height: calc(
+    var(--nav-icon-band-min) + var(--nav-icons-chat-gap) + var(--nav-ask-cedar-block) +
+      0.5rem - var(--nav-bar-trim)
+  );
 
   color-scheme: dark;
 }
