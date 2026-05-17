@@ -21,32 +21,12 @@ function IconSendArrow() {
   )
 }
 
-function BottomNavArch() {
-  return (
-    <svg
-      className="bottom-nav-arch"
-      viewBox="0 0 390 56"
-      preserveAspectRatio="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M0 56 V40 Q195 -2 390 40 V56 Z"
-        fill="currentColor"
-      />
-    </svg>
-  )
-}
-
 const noop = () => {}
 
 export function BottomNav() {
   return (
     <footer className="bottom-nav-shell">
       <div className="bottom-nav-panel">
-        <div className="bottom-nav-arch-zone">
-          <BottomNavArch />
-        </div>
-
         <div className="bottom-nav-body">
           <nav className="bottom-nav" aria-label="Primary">
             <RippleTouchButton className="bottom-nav__btn" aria-label="My Boutique" onClick={noop}>

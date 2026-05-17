@@ -20,9 +20,31 @@
 
   --topbar-height: clamp(60px, 17vw, 70px);
   --nav-arch-height: 56px;
-  /* Pull the bar up by half the seal so the seal straddles cream / green */
-  --nav-arch-lift: calc(var(--nav-seal-size) / 2);
+  --nav-arch-viewbox-width: 390;
+  /* Room above y=0 for collar peak (seal center y − collar radius). */
+  --nav-arch-viewbox-inset-top: 28px;
+  --nav-arch-viewbox-height: calc(var(--nav-arch-height) + var(--nav-arch-viewbox-inset-top));
+  --nav-arch-zone-height: var(--nav-arch-viewbox-height);
   --nav-seal-size: 64px;
+  --nav-seal-radius: calc(var(--nav-seal-size) / 2);
+  /* Collar gap around cedar seal and flat bar above label baselines (Vivino-style). */
+  --nav-collar-gap: 9px;
+  --nav-flat-above-labels: 9px;
+  --nav-row-padding-bottom: 0px;
+  --nav-row-stack: calc(
+    var(--nav-icon-size) + var(--nav-icon-label-gap) + var(--nav-label-line) +
+      var(--nav-btn-padding-bottom)
+  );
+  /* Pull nav row up so label baselines sit on the arch viewBox bottom (y = arch-height). */
+  --nav-body-pull: var(--nav-row-stack);
+  --nav-label-baseline-y: var(--nav-arch-height);
+  --nav-arch-flat-y: calc(var(--nav-label-baseline-y) - var(--nav-flat-above-labels));
+  --nav-seal-bottom-y: calc(
+    var(--nav-label-baseline-y) - var(--nav-btn-padding-bottom)
+  );
+  --nav-seal-center-y: calc(var(--nav-seal-bottom-y) - var(--nav-seal-radius));
+  /* Pull footer up: half seal straddle + arch overdraw above viewBox origin */
+  --nav-arch-lift: calc(var(--nav-seal-size) / 2 + var(--nav-arch-viewbox-inset-top));
   --nav-icon-size: 28px;
   --nav-icon-label-gap: 5px;
   --nav-btn-padding-bottom: 2px;
