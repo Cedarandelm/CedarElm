@@ -19,10 +19,15 @@
   --font-body: 'Cormorant Garamond', Garamond, serif;
 
   --topbar-height: clamp(60px, 17vw, 70px);
-  --nav-arch-height: 48px;
-  --nav-arch-lift: 36px;
+  --nav-arch-height: 56px;
+  /* Pull the bar up by half the seal so the seal straddles cream / green */
+  --nav-arch-lift: calc(var(--nav-seal-size) / 2);
   --nav-seal-size: 64px;
   --nav-icon-size: 28px;
+  --nav-icon-label-gap: 5px;
+  --nav-btn-padding-bottom: 2px;
+  --nav-label-size: clamp(0.48rem, 2.35vw, 0.56rem);
+  --nav-label-line: calc(var(--nav-label-size) * 1.15);
 
   color-scheme: dark;
 }
