@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import './App.css'
+import { AdCarousel } from './components/AdCarousel.jsx'
 import { BottomNav } from './components/BottomNav.jsx'
 import { RippleTouchButton } from './components/RippleTouchButton.jsx'
 
@@ -32,7 +33,9 @@ export default function App() {
       <div className="app__stage">
         <main className="app__main">
           <div className="app__content-stage">
-            <div className="app__media-frame" aria-hidden="true" />
+            <div className="app__media-frame">
+              <AdCarousel />
+            </div>
           </div>
         </main>
 

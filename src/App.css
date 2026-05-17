@@ -53,7 +53,7 @@
   min-height: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   background-color: var(--content-warm);
   overflow: hidden;
 }
@@ -64,21 +64,19 @@
   min-height: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: stretch;
+  justify-content: stretch;
   padding: 0;
   overflow: hidden;
 }
 
 .app__media-frame {
-  width: min(100%, 390px);
-  aspect-ratio: 3 / 4;
-  height: auto;
-  max-height: min(
-    32.5rem,
-    calc(100dvh - var(--topbar-height) - 11.5rem - var(--safe-top) - var(--safe-bottom))
-  );
-  flex: 0 1 auto;
+  position: relative;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 0;
   background-color: var(--content-warm);
 }
 
